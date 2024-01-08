@@ -18,6 +18,17 @@ class User {
         return this;
     }
 }
+class Admin extends User {
+    deleteUser(user) {
+        users = users.filter(u => {
+            return u.email != user.email;
+        })
+    }
+}
 const UserOne = new User('mogendieric19@gmail.com', 'Eric')
 const Usertwo = new User('mogendicedric1@gmail.com', 'Cedric')
-UserOne.login().updateSCore().updateSCore().logout()
+const admin = new Admin('Shaun@gmail.com', 'Shaul')
+let users = [UserOne, Usertwo, admin]
+
+// admin.deleteUser(Usertwo)
+console.log(users)
